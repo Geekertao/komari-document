@@ -17,7 +17,12 @@ Komari 镜像站提供者 Geekertao 在 2026 年 1 月 1 日向 1Panel 的官方
 以 root 用户身份运行以下脚本，自动将 Komari 添加到 1Panel 的应用商店：
 
 ```bash
-bash -c "$(curl -sSL https://1panel.komari.wiki/install.sh)"
+bash -c "$(curl -sSL https://1panel.komari.wiki/install.sh)" #By服务器
+```
+或使用备用地址
+
+```bash
+bash -c "$(curl -sSL https://1p.komari.wiki/install.sh)" #By CloudFlare Pages
 ```
 
 ---
@@ -40,3 +45,35 @@ bash -c "$(curl -sSL https://1panel.komari.wiki/install.sh)"
 ## 步骤三：开始使用
 
 安装完成后，打开您的 Komari 界面，即可开始使用 Komari 监控您的服务器！
+
+---
+
+## 使用 1Panel 更新 Komari
+
+### 步骤一：更新本地应用配置
+
+> **提示**：
+> 自 2026 年 1 月 30 日起，新版脚本已集成 `1panel-komari` 快捷命令。
+> - **旧版本用户**：若您在此日期前安装，请重新运行一次安装脚本以激活新特性。
+> - **新版本用户**：直接执行下方命令即可。
+
+在终端以 root 身份执行以下命令，脚本会自动拉取最新的部署包：
+
+```bash
+1panel-komari
+```
+(提示：若命令未生效，请重新执行步骤一中的 curl 安装脚本进行覆盖更新)
+
+---
+
+## 步骤二：在面板执行版本升级
+
+脚本执行完成后，请返回 1Panel 网页端完成最后的操作：
+
+
+
+ 1. 进入 应用商店，点击右上角的 「同步本地应用」。
+ 2. 切换至顶部导航栏的 「已安装」 页面。
+ 3. 在列表中找到 Komari 应用，点击 「升级」 按钮。
+
+> 完成！ 升级过程通常时间很短，系统会自动拉取并重启容器以应用更新。
